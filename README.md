@@ -31,11 +31,29 @@ uv run python main.py
 The first time you run it, it'll chunk your documents and build the FAISS index. After that, it'll just load the saved index from `faiss_store/`.
 
 ## Project Structure
-- `src/data_loader.py` - Logic for reading different file formats.
-- `src/embedding.py` - Document splitting and vector generation.
-- `src/vectorstore.py` - FAISS management (save/load/query).
-- `src/search.py` - The "brain" that pulls context and sends prompts to Groq.
-- `main.py` - The CLI entry point.
+
+```text
+RAG-LEARNING/
+├── data/               # 📥 Place your source documents here
+│   └── pdf/            # 📄 Put PDF files in this subfolder
+├── src/                # 🧠 Core Processing Logic
+│   ├── data_loader.py  # Logic for reading different file formats
+│   ├── embedding.py    # Document splitting and vector generation
+│   ├── vectorstore.py  # Vector database management (FAISS/Chroma)
+│   └── search.py       # Retrieval and LLM prompting logic
+├── notebook/           # 📓 Jupyter notebooks for experimentation
+├── faiss_store/        # 💾 Local vector database (Git ignored)
+├── main.py             # 🚀 CLI entry point
+├── requirements.txt    # 📦 Dependencies
+└── .env                # 🔑 API Keys (Git ignored)
+```
+
+- **src/data_loader.py** - Logic for reading different file formats.
+- **src/embedding.py** - Document splitting and vector generation.
+- **src/vectorstore.py** - FAISS management (save/load/query).
+- **src/search.py** - The "brain" that pulls context and sends prompts to Groq.
+- **main.py** - The CLI entry point.
+
 
 ## A few notes / "Gotchas"
 - **Model Choice:** I originally had this set to `gemma2-9b-it`, but Groq decommissioned it. Switched to `llama-3.3-70b-versatile`.
