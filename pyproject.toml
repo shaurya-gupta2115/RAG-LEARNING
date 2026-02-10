@@ -17,4 +17,10 @@ dependencies = [
     "pymupdf>=1.26.7",
     "pypdf>=6.6.2",
     "sentence-transformers>=5.2.2",
+    "python-dotenv",
+    "numpy",
+    "docx2txt",
+    "unstructured",
+    "openpyxl",
 ]
+

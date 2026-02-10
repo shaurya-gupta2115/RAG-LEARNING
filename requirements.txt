@@ -11,6 +11,11 @@ faiss-cpu
 langchain_openai
 langchain-groq
 typesense
+python-dotenv
+numpy
+docx2txt
+unstructured
+openpyxl
 
 
 
